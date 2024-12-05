@@ -8,7 +8,7 @@ body {
     background-size: cover; /* 이미지 크기를 창 크기에 맞춤 */
     background-repeat: no-repeat; /* 이미지 반복 방지 */
     background-position: center; 
-    /*overflow: hidden;*/
+    overflow: hidden;
   }
   
   /* 캔버스 스타일: 화면 전체를 채움 */
@@ -159,8 +159,8 @@ body {
   
   
   .introduction {
-    width: 27%;
-    height: 50%;
+    width: 24%;
+    height: auto;
     padding: 0.02vw 1vw; /* 내부 여백 */
     overflow: auto; /* 텍스트가 영역을 넘어가면 스크롤 생성 */
     word-wrap: break-word; /* 긴 단어가 자동으로 줄바꿈되도록 설정 */
@@ -307,4 +307,33 @@ body {
   .tooltip-container:hover .tooltip-text {
     visibility: visible;
     opacity: 1;
+  }
+
+  #star {
+    position: absolute;
+    top : 12%;
+    left : 50%;
+    transform: translateX(-50%);
+    width: 20vw;
+    height: auto;
+    display: block;
+  }
+
+
+  #card_l2m {
+    position: absolute;
+    top : 49%;
+    left : 70%;
+    width: 10vw;
+    height: auto;
+    display: block;
+  }
+
+  #card_egon {
+    position: absolute;
+    top : 49%;
+    left : 81%;
+    width: 10vw;
+    height: auto;
+    display: block;
   }
