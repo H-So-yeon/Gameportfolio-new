@@ -1,8 +1,310 @@
-html, body {
-  margin: 0;
-  padding: 0;
-}
-
-canvas {
-  display: block;
-}
+/* Body 스타일: 캔버스 전체 화면 */
+body {
+    margin: 0;
+    font-family: "Luckiest Guy", cursive;
+    font-weight: 100;
+    font-style: normal;
+    background-image: url('images/background.jpg'); /* 배경 이미지 파일 경로 */
+    background-size: cover; /* 이미지 크기를 창 크기에 맞춤 */
+    background-repeat: no-repeat; /* 이미지 반복 방지 */
+    background-position: center; 
+    /*overflow: hidden;*/
+  }
+  
+  /* 캔버스 스타일: 화면 전체를 채움 */
+  canvas {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .right {
+    top : 50%;
+  }
+  
+  /* Text */
+  h1 {
+    position: absolute;
+    top: 16%;
+    left: 3%;
+    transform: translateX(0%);
+    font-size: 4.2vw;
+    color: white;
+    line-height: 0.85; /* 줄 간격 */
+    text-shadow: 
+      -4px -4px 0 black, /* 왼쪽 위 */
+      4px -4px 0 black,  /* 오른쪽 위 */
+      -4px 4px 0 black,  /* 왼쪽 아래 */
+      4px 4px 0 black;   /* 오른쪽 아래 */
+  }
+  
+  /* Skills & Ability */
+  h2 {
+    position: absolute;
+    left: 70%;
+    transform: translateX(0%);
+    font-size: 1.7vw;
+    color: white;
+    text-shadow: 
+      -3px -3px 0 black, /* 왼쪽 위 */
+      4px -3px 0 black,  /* 오른쪽 위 */
+      -3px 3px 0 black,  /* 왼쪽 아래 */
+      3px 3px 0 black;   /* 오른쪽 아래 */
+  }
+  
+  #skills {
+    top: 10%;
+  }
+  
+  #ability{
+    top: 40%;
+  }
+  
+  /* UX/UI Designer */
+  h3 {
+    position: absolute;
+    top: 14%;
+    left: 3%;
+    transform: translateX(0%);
+    font-size: 1.5vw;
+    color: white;
+    text-shadow: 
+      -3px -3px 0 black, /* 왼쪽 위 */
+      3px -3px 0 black,  /* 오른쪽 위 */
+      -3px 3px 0 black,  /* 왼쪽 아래 */
+      3px 3px 0 black;   /* 오른쪽 아래 */
+  }
+  
+  /* Game Money */
+  .gold, .time {
+    position: absolute; /* 고정된 위치를 기준으로 설정 */
+    top: 1%; /* y축 위치를 화면 상단에서 1%로 설정 */
+  }
+  
+  .gold {
+    left: 70%; /* x축 위치 */
+  }
+  
+  .time {
+    left: 82%; /* x축 위치 */
+  }
+  
+  .gold_text {
+    position: absolute;
+    font-size: 1.2vw;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7); /* 반투명 배경 */
+    padding: 0.2vw 2vw;
+    border-radius: 3px;
+  }
+  
+  .time_text {
+    position: absolute;
+    font-size: 1.2vw;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7); /* 반투명 배경 */
+    padding: 0.2vw 2vw;
+    border-radius: 3px;
+  }
+  
+  #gold_img {
+    position: absolute;
+    width: 3vw;
+    height: auto;
+    transform: translateY(30%);
+    top : 1%;
+    left: 68%; 
+  }
+  
+  #time_img {
+    position: absolute;
+    width: 3vw;
+    height: auto;
+    transform: translateY(30%);
+    top : 1%;
+    left: 80.5%; 
+  }
+  
+  /* Legendary */
+  .grade {
+    position: absolute;
+    top: 10%;
+    left: 3%;
+    width: 14%; /* 부모 요소 크기 지정 */
+    height: auto;
+  }
+  
+  #grade_box {
+    display: block;
+    width: 100%; /* 부모 요소 크기에 맞춤 */
+    height: auto;
+    max-width: 100%;
+  }
+  
+  .grade_text {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -200%); /* 정확히 중앙으로 이동 */
+    font-size: 1.5vw;
+    color: white;
+    padding: 0.5vw 4vw;
+    text-shadow: 
+      -3px -3px 0 #FFB428, /* 왼쪽 위 */
+      3px -3px 0 #FFB428,  /* 오른쪽 위 */
+      -3px 3px 0 #FFB428,  /* 왼쪽 아래 */
+      3px 3px 0 #FFB428;   /* 오른쪽 아래 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 (필요 시 제거) */
+  }
+  
+  
+  .introduction {
+    width: 27%;
+    height: 50%;
+    padding: 0.02vw 1vw; /* 내부 여백 */
+    overflow: auto; /* 텍스트가 영역을 넘어가면 스크롤 생성 */
+    word-wrap: break-word; /* 긴 단어가 자동으로 줄바꿈되도록 설정 */
+    position: absolute;
+    top: 39%;
+    left: 3%;
+    transform: translateX(0%);
+    font-size: 0.9vw;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.2); /* 반투명 배경 */
+    line-height: 1.5; /* 줄 간격 */
+  }
+  
+  
+  
+  /* 버튼 위치와 스타일 */
+  #selectButton {
+    position: absolute;
+    top: 80%;
+    left: 70%;
+    z-index: 10;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  #selectButton:hover {
+    transform: scale(1.06);
+  }
+  
+  #selectButton img {
+    width: 105%;
+    height: auto;
+    display: block;
+  }
+  
+  #selectButton:hover img {
+    content: url('images/select_btn_hover.png');
+  }
+  
+  .button-text {
+    transform: translate(-155%, -10%);
+    font-size: 4.2vw;
+    color: white;
+    text-shadow: 
+      -4px -4px 0 black,
+      4px -4px 0 black,
+      -4px 4px 0 black,
+      4px 4px 0 black;
+    font-family: "Luckiest Guy", cursive;
+  }
+  
+  /*home Button*/
+  #homeButton {
+    position: absolute;
+    top: 2.5%;
+    left: 93%;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.1s ease;
+  }
+  
+  #homeButton img {
+    width: 5vw;
+    height: auto;
+    display: block;
+  }
+  
+  #homeButton:hover {
+    transform: scale(1.2);
+  }
+  
+  
+  .tooltip-container {
+    position: absolute;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  #skill_ai {
+    top: 17.5%;
+    left: 70%;
+  }
+  
+  #skill_ps {
+    top: 17.5%;
+    left: 77%;
+  }
+  
+  #skill_ae {
+    top: 17.5%;
+    left: 84%;
+  }
+  
+  #skill_pr {
+    top: 28.5%;
+    left: 73.5%;
+  }
+  
+  #skill_fg {
+    top: 28.5%;
+    left: 80.5%;
+  }
+  
+  .tooltip-container img {
+    width: 6vw;
+    height: auto;
+    z-index: 1;
+    transition: transform 0.3s ease; /* 부드러운 확대 효과 */
+  }
+  
+  .tooltip-container img:hover {
+    transform: scale(1.1); /* 이미지 확대 */
+  }
+  
+  .tooltip-text {
+    visibility: hidden;
+    position: absolute;
+    bottom: -0.15vw; 
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 1);
+    color: #fff;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1vw;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 999; /* 툴팁이 모든 요소 위에 표시 */
+  }
+  
+  .tooltip-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+  }
