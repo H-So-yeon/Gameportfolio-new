@@ -1,18 +1,19 @@
 import { GLTFLoader } from 'https://unpkg.com/three@0.141.0/examples/jsm/loaders/GLTFLoader.js';
+import { AnimationMixer, Clock } from 'https://unpkg.com/three@0.141.0/build/three.module.js';
 import * as THREE from 'https://unpkg.com/three@0.141.0/build/three.module.js';
 
 // Scene setup
 const scene = new THREE.Scene();
 
-// Renderer setup with alpha enabled for transparency
+// Background
 const renderer = new THREE.WebGLRenderer({
   canvas: document.querySelector('#canvas'),
   antialias: true,
-  alpha: true // Enable transparency
+  alpha: true // 
 });
 renderer.outputEncoding = THREE.sRGBEncoding;
 
-// Resize renderer to match screen size
+// Screen size
 function resizeRendererToDisplaySize() {
   const canvas = renderer.domElement;
   const width = window.innerWidth;
@@ -24,25 +25,39 @@ function resizeRendererToDisplaySize() {
 
 // Camera setup
 const camera = new THREE.PerspectiveCamera(30, window.innerWidth / window.innerHeight, 0.1, 1000);
-camera.position.set(0, 0, 400);
+camera.position.set(0.3, 0.3, 6.8);
 
-// Set background to transparent
-scene.background = null; // No background color or texture
+// Transparent background
+scene.background = null; 
 
 // Lights setup
-const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); // Soft white light
+const ambientLight = new THREE.AmbientLight(0xffffff, 5.0);
 scene.add(ambientLight);
 
-const directionalLight = new THREE.DirectionalLight(0xffffff, 1); // Neutral light
+const directionalLight = new THREE.DirectionalLight(0xffffff, 5); 
 directionalLight.position.set(5, 5, 5);
 scene.add(directionalLight);
 
 // GLTFLoader to load model
 let model = null;
+let mixer = null;
+const clock = new Clock();
+
 const loader = new GLTFLoader();
 loader.load('birbs/scene.gltf', function (gltf) {
   model = gltf.scene;
+  
+  // Center the model
+  const box = new THREE.Box3().setFromObject(model);
+  const center = box.getCenter(new THREE.Vector3());
+  model.position.sub(center);
   scene.add(model);
+
+  // Animation mixer
+  if (gltf.animations.length > 0) {
+    mixer = new AnimationMixer(model);
+    gltf.animations.forEach((clip) => mixer.clipAction(clip).play());
+  }
 
   animate();
 });
@@ -87,16 +102,22 @@ renderer.domElement.addEventListener('mouseleave', function () {
 // Animation loop
 function animate() {
   requestAnimationFrame(animate);
+  
+
+  if (mixer) {
+    mixer.update(clock.getDelta());
+  }
+  
   resizeRendererToDisplaySize();
   renderer.render(scene, camera);
 }
 
-//select btn link
+// Select btn link
 document.getElementById("selectButton").addEventListener("click", function () {
   window.open("https://www.soyeonhwang.com/", "_blank");
 });
 
-//select home link
+// Home btn link
 document.getElementById("homeButton").addEventListener("click", function () {
   window.open("https://www.soyeonhwang.com/", "_blank");
 });

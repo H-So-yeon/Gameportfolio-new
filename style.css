@@ -1,17 +1,17 @@
-/* Body 스타일: 캔버스 전체 화면 */
+/* Body */
 body {
     margin: 0;
     font-family: "Luckiest Guy", cursive;
     font-weight: 100;
     font-style: normal;
-    background-image: url('images/background.jpg'); /* 배경 이미지 파일 경로 */
+    background-image: url('images/background.jpg'); 
     background-size: cover; /* 이미지 크기를 창 크기에 맞춤 */
     background-repeat: no-repeat; /* 이미지 반복 방지 */
     background-position: center; 
     overflow: hidden;
   }
   
-  /* 캔버스 스타일: 화면 전체를 채움 */
+  /*  Canvas*/
   canvas {
     display: block;
     width: 100vw;
@@ -41,7 +41,7 @@ body {
   /* Skills & Ability */
   h2 {
     position: absolute;
-    left: 70%;
+    left: 75%;
     transform: translateX(0%);
     font-size: 1.7vw;
     color: white;
@@ -53,7 +53,7 @@ body {
   }
   
   #skills {
-    top: 10%;
+    top: 9%;
   }
   
   #ability{
@@ -82,7 +82,7 @@ body {
   }
   
   .gold {
-    left: 70%; /* x축 위치 */
+    left: 71%; /* x축 위치 */
   }
   
   .time {
@@ -93,35 +93,36 @@ body {
     position: absolute;
     font-size: 1.2vw;
     color: white;
-    background-color: rgba(0, 0, 0, 0.7); /* 반투명 배경 */
+    background-color: rgba(0, 0, 0, 0.7); 
     padding: 0.2vw 2vw;
-    border-radius: 3px;
+    border-radius: 0.3vw;
   }
+  
   
   .time_text {
     position: absolute;
     font-size: 1.2vw;
     color: white;
-    background-color: rgba(0, 0, 0, 0.7); /* 반투명 배경 */
+    background-color: rgba(0, 0, 0, 0.7); 
     padding: 0.2vw 2vw;
-    border-radius: 3px;
+    border-radius: 0.3vw;
   }
   
   #gold_img {
     position: absolute;
-    width: 3vw;
+    width: 2.8vw;
     height: auto;
     transform: translateY(30%);
-    top : 1%;
-    left: 68%; 
+    top : 1.5%;
+    left: 69.2%; 
   }
   
   #time_img {
     position: absolute;
-    width: 3vw;
+    width: 2.8vw;
     height: auto;
     transform: translateY(30%);
-    top : 1%;
+    top : 1.5%;
     left: 80.5%; 
   }
   
@@ -130,13 +131,13 @@ body {
     position: absolute;
     top: 10%;
     left: 3%;
-    width: 14%; /* 부모 요소 크기 지정 */
+    width: 14%;
     height: auto;
   }
   
   #grade_box {
     display: block;
-    width: 100%; /* 부모 요소 크기에 맞춤 */
+    width: 100%; 
     height: auto;
     max-width: 100%;
   }
@@ -144,43 +145,61 @@ body {
   .grade_text {
     position: absolute;
     left: 50%;
-    transform: translate(-50%, -200%); /* 정확히 중앙으로 이동 */
+    transform: translate(-50%, -200%); 
     font-size: 1.5vw;
     color: white;
     padding: 0.5vw 4vw;
     text-shadow: 
-      -3px -3px 0 #FFB428, /* 왼쪽 위 */
-      3px -3px 0 #FFB428,  /* 오른쪽 위 */
-      -3px 3px 0 #FFB428,  /* 왼쪽 아래 */
-      3px 3px 0 #FFB428;   /* 오른쪽 아래 */
-    text-align: center; /* 텍스트 중앙 정렬 */
-    white-space: nowrap; /* 텍스트 줄바꿈 방지 (필요 시 제거) */
+      -3px -3px 0 #FFB428, 
+      3px -3px 0 #FFB428,  
+      -3px 3px 0 #FFB428,  
+      3px 3px 0 #FFB428;   
+    text-align: center; 
+    white-space: nowrap; 
   }
   
   
   .introduction {
     width: 24%;
     height: auto;
-    padding: 0.02vw 1vw; /* 내부 여백 */
+    padding: 0.02vw 1vw; 
     overflow: auto; /* 텍스트가 영역을 넘어가면 스크롤 생성 */
-    word-wrap: break-word; /* 긴 단어가 자동으로 줄바꿈되도록 설정 */
+    word-wrap: break-word; 
     position: absolute;
     top: 39%;
     left: 3%;
     transform: translateX(0%);
-    font-size: 0.9vw;
+    font-size: 1vw;
     color: white;
-    background-color: rgba(0, 0, 0, 0.2); /* 반투명 배경 */
-    line-height: 1.5; /* 줄 간격 */
+    background-color: rgba(0, 0, 0, 0.2); 
+    line-height: 1.5;
+    text-shadow: 
+      -1px -1px 0 black,
+      1px -1px 0 black,
+      -1px 1px 0 black,
+      1px 1px 0 black;
+  }
+
+  h6 {
+    position: absolute;
+    top : 94%;
+    left : 50%;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    color : white;
+    height: auto;
+    display: block;
+    transform: translateX(-40%);
+    font-size: 0.7vw;
   }
   
   
   
-  /* 버튼 위치와 스타일 */
+  /* Select Button */
   #selectButton {
     position: absolute;
-    top: 80%;
-    left: 70%;
+    top: 84%;
+    left: 74%;
     z-index: 10;
     padding: 0;
     border: none;
@@ -207,8 +226,8 @@ body {
   }
   
   .button-text {
-    transform: translate(-155%, -10%);
-    font-size: 4.2vw;
+    transform: translate(-155%, -7%);
+    font-size: 3.9vw;
     color: white;
     text-shadow: 
       -4px -4px 0 black,
@@ -252,34 +271,34 @@ body {
   
   #skill_ai {
     top: 17.5%;
-    left: 70%;
+    left: 76%;
   }
   
   #skill_ps {
     top: 17.5%;
-    left: 77%;
+    left: 83%;
   }
   
   #skill_ae {
     top: 17.5%;
-    left: 84%;
+    left: 90%;
   }
   
   #skill_pr {
     top: 28.5%;
-    left: 73.5%;
+    left: 79.5%;
   }
   
   #skill_fg {
     top: 28.5%;
-    left: 80.5%;
+    left: 86.5%;
   }
   
   .tooltip-container img {
     width: 6vw;
     height: auto;
     z-index: 1;
-    transition: transform 0.3s ease; /* 부드러운 확대 효과 */
+    transition: transform 0.1s ease; /* 부드러운 확대 효과 */
   }
   
   .tooltip-container img:hover {
@@ -300,7 +319,7 @@ body {
     font-size: 1vw;
     white-space: nowrap;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.2s ease;
     z-index: 999; /* 툴팁이 모든 요소 위에 표시 */
   }
   
@@ -319,21 +338,45 @@ body {
     display: block;
   }
 
-
-  #card_l2m {
+  #shadow {
     position: absolute;
-    top : 49%;
-    left : 70%;
-    width: 10vw;
+    top : 88.5%;
+    left : 50%;
+    transform: translateX(-50%);
+    width: 17vw;
     height: auto;
     display: block;
   }
 
-  #card_egon {
-    position: absolute;
-    top : 49%;
-    left : 81%;
-    width: 10vw;
-    height: auto;
-    display: block;
-  }
+/*Card*/
+.hover-card {
+  transition: transform 0.1s ease;
+  display: block;
+  position: absolute;
+  width: 10vw;
+  height: auto;
+}
+
+.hover-card:hover {
+  transform: scale(1.1);
+}
+
+#card_l2m {
+  top: 49%;
+  left: 76%;
+}
+
+#card_egon {
+  top: 49%;
+  left: 87%;
+}
+
+#card_dt {
+  top: 65%;
+  left: 76%;
+}
+
+#card_ez {
+  top: 65%;
+  left: 87%;
+}
